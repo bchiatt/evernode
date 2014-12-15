@@ -44,6 +44,7 @@ describe('User', function(){
       });
     });
   });
+
   describe('.login', function(){
     it('should login a user', function(done){
       User.login({username:'bob', password:'1234'}, function(user){

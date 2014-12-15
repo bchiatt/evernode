@@ -4,6 +4,7 @@
 
 var expect     = require('chai').expect,
     cp         = require('child_process'),
+    fs         = require('fs'),
     h          = require('../helpers/helpers'),
     Note       = require('../../server/models/note'),
     Lab        = require('lab'),
@@ -28,6 +29,7 @@ describe('User', function(){
       done();
     });
   });
+
   describe('.create', function(){
     it('should create a new note', function(done){
       Note.create({id:1}, {title:'TITLE', body:'BODY', tags:'a,b,c'}, function(err, note){
@@ -37,9 +39,10 @@ describe('User', function(){
       });
     });
   });
+
   describe('.query', function(){
     it('should find all notes from a user', function(done){
-      Note.query({id:1}, {limit:10,offest:0,tag:'%'}, function(err, notes){
+      Note.query({id:1}, {}, function(err, notes){
         expect(err).to.be.null;
         expect(notes.length).to.be.above(1);
         done();
@@ -53,6 +56,7 @@ describe('User', function(){
       });
     });
   });
+
   describe('.show', function(){
     it('should find a note from a user', function(done){
       Note.show({id:1}, 1, function(err, note){
@@ -62,6 +66,7 @@ describe('User', function(){
       });
     });
   });
+
   describe('.count', function(){
     it('should return a user\'s total note count', function(done){
       Note.count({id:1}, function(err, count){
@@ -71,11 +76,33 @@ describe('User', function(){
       });
     });
   });
+
   describe('.nuke', function(){
     it('should delete a note', function(done){
       Note.nuke({id:1}, '1', function(err, noteId){
         expect(err).to.be.null;
         expect(noteId).to.be.equal(1);
+        done();
+      });
+    });
+  });
+
+  describe('.upload', function(){
+    it('should upload an image', function(done){
+      var file = fs.createReadStream(__dirname + '/../fixtures/flag.png');
+      Note.upload({token:'tok'}, file, 'flag.png', 1, function(err, result){
+        expect(err).to.be.null;
+        expect(result.ETag).to.be.ok;
+        done();
+      });
+    });
+  });
+
+  describe('.uploadmobile', function(){
+    it('should upload a b64 encoded image', function(done){
+      Note.uploadmobile({token:'tok'}, 'b64image', 1, function(err, result){
+        expect(err).to.be.null;
+        expect(result.ETag).to.be.ok;
         done();
       });
     });
