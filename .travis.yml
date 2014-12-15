@@ -19,3 +19,7 @@ env:
   global:
     - DATABASE_URL=postgres://postgres@localhost/evernode_test
     - AWS_BUCKET=bc-evernode-test
+    # AWS_ACCESS_KEY_ID
+    - secure: "h9lbkGjQc4x47RiL25yDjkv9qHQ32E6P1zXk7FNWewPNDShtBbRps/zQ1Dy5VqZDTyyhLc7CYUcne6mlDvsCnS7sg9uSfwNxfZ3Cc+6LJ8k0gv5fWqIafX0zNLnWlTTjqwm7ecH4YUT0d+YEpKVs7i4nTDQKWlEwOOw7rQOe5vk="
+    # AWS_SECRET_ACCESS_KEY
+    - secure: "lA9XydsSFz7+EdFA5srLZVv+/25tkOD1+DNj2JMUGesLG4DbOkRJTHKSVS7VZkbID4Gh6EongwosQ8vYw58sRaXbLfubxUgIu8dEj888GaSxbdnCiAGhH9IbRuSEvZZji91Wa6Zm1YaoAJ0Ek+3XyVVw6BT25aSakNtCDIFXb84="
