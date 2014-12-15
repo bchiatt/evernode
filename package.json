@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "postinstall": "grunt deploy,",
+    "postinstall": "grunt deploy",
     "syntax": "grunt build",
     "test": "make test",
     "coveralls": "make test-cov | coveralls"
