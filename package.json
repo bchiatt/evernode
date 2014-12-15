@@ -7,13 +7,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-cohort-2014-06-07/hapi-technologies"
+    "url": "https://github.com/bchiatt/evernode"
+  },
+  "bin": {
+    "coveralls": "./node_modules/coveralls/bin/coveralls.js"
   },
   "scripts": {
     "start": "node server/index.js",
-    "postinstall": "grunt deploy"
+    "postinstall": "grunt deploy,",
+    "syntax": "grunt build",
+    "test": "make test",
+    "coveralls": "make test-cov | coveralls"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "Brian Hiatt <brian.hiatt41@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.0.28",
