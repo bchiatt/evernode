@@ -48,6 +48,8 @@
     "request": "^2.49.0"
   },
   "devDependencies": {
+    "chai": "^1.10.0",
+    "coveralls": "^2.11.2",
     "lab": "^5.1.0"
   }
 }
