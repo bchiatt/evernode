@@ -11,8 +11,10 @@ module.exports = {
       noteId: Joi.number().required()
     }
   },
+  cors:{origin: ['http://localhost:8100'], credentials: true},
   payload:{
-    maxBytes: 20500500
+    maxBytes: 20500500,
+    timeout: 60000
   },
   handler: function(request, reply){
     Note.uploadmobile(request.auth.credentials, request.payload.b64, request.params.noteId, function(err){
