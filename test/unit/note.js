@@ -30,21 +30,20 @@ describe('User', function(){
   });
   describe('.create', function(){
     it('should create a new note', function(done){
-      var obj = {
-         title: 'TITLE',
-         body: 'BODY',
-         tags: 'a,b,c'
-      };
-
-      Note.create(1, obj, function(err, result){
-        console.log(err);
+      Note.create({id:1}, {title:'TITLE', body:'BODY', tags:'a,b,c'}, function(err, note){
+        expect(err).to.be.null;
+        expect(note).to.be.ok;
         done();
       });
     });
   });
   describe('.query', function(){
     it('should find all notes from a user', function(done){
-      done();
+      Note.query({id:1}, {}, function(err, notes){
+        console.log('error', err);
+        console.log('notes', notes);
+        done();
+      });
     });
   });
   describe('.show', function(){

@@ -32,8 +32,10 @@ describe('User', function(){
 
   describe('.register', function(){
     it('should register a new user', function(done){
-      User.register({username:'sam', password:'1234', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'}, function(err){
+      User.register({username:'sam', password:'1234', avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'}, function(err, b, c){
         console.log('error', err);
+        console.log('b', b);
+        console.log('c', c);
         expect(err).to.be.null;
         done();
       });
