@@ -39,26 +39,45 @@ describe('User', function(){
   });
   describe('.query', function(){
     it('should find all notes from a user', function(done){
-      Note.query({id:1}, {}, function(err, notes){
-        console.log('error', err);
-        console.log('notes', notes);
+      Note.query({id:1}, {limit:10,offest:0,tag:'%'}, function(err, notes){
+        expect(err).to.be.null;
+        expect(notes.length).to.be.above(1);
+        done();
+      });
+    });
+    it('should find 2 notes from a user', function(done){
+      Note.query({id:1}, {limit:2,offest:0,tag:'%'}, function(err, notes){
+        expect(err).to.be.null;
+        expect(notes.length).to.be.equal(2);
         done();
       });
     });
   });
   describe('.show', function(){
     it('should find a note from a user', function(done){
-      done();
+      Note.show({id:1}, 1, function(err, note){
+        expect(err).to.be.null;
+        expect(note.tags.length).to.be.equal(3);
+        done();
+      });
     });
   });
   describe('.count', function(){
     it('should return a user\'s total note count', function(done){
-      done();
+      Note.count({id:1}, function(err, count){
+        expect(err).to.be.null;
+        expect(count).to.be.equal('2');
+        done();
+      });
     });
   });
   describe('.nuke', function(){
     it('should delete a note', function(done){
-      done();
+      Note.nuke({id:1}, '1', function(err, noteId){
+        expect(err).to.be.null;
+        expect(noteId).to.be.equal(1);
+        done();
+      });
     });
   });
 });
