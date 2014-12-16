@@ -22,8 +22,8 @@ insert into tags (id,name) values (1,'a');
 insert into tags (id,name) values (2,'b');
 insert into tags (id,name) values (3,'c');
 
-insert into notes (id,user_id,title,body) values (1,1,'TITLE','BODY');
-insert into notes (id,user_id,title,body) values (2,1,'TITLE','BODY');
+insert into notes (id,user_id,title,body) values (1,1,'TITLE1','BODY1');
+insert into notes (id,user_id,title,body) values (2,1,'TITLE2','BODY2');
 
 insert into notes_tags(note_id,tag_id) values (1,1);
 insert into notes_tags(note_id,tag_id) values (1,2);

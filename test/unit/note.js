@@ -14,7 +14,7 @@ var expect     = require('chai').expect,
     beforeEach = lab.beforeEach,
     db         = h.getdb();
 
-describe('User', function(){
+describe('Note', function(){
   beforeEach(function(done){
     cp.execFile(__dirname + '/../scripts/clean-db.sh', [db], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr){
       done();
