@@ -5,12 +5,12 @@
 //     db = h.getdb();
 
 describe('login', function(){
-  // beforeEach(function(done){
+  beforeEach(function(done){
   //   cp.execFile(__dirname + '/../../scripts/clean-db.sh', [db], {cwd:__dirname + '/../../scripts'}, function(err, stdout, stderr){
-  //     browser.get('/#/login');
-  //     done();
+      browser.get('/#/login');
+      done();
   //   });
-  // });
+  });
 
   it('should get login page', function(){
     expect(element(by.css('div[ui-view] > h1')).getText()).toEqual('login');
