@@ -1,8 +1,8 @@
 'use strict';
 
-var cp   = require('child_process'),
+var //cp   = require('child_process'),
     h    = require('../../helpers/helpers'),
-    db   = h.getdb(),
+    //db   = h.getdb(),
     path = require('path');
 
 describe('notes list', function(){
@@ -43,10 +43,10 @@ function create(title, body, tags){
   element(by.css('button[ng-click]')).click();
 }
 
-function login(){
-  browser.get('/#/login');
-  element(by.model('user.username')).sendKeys('bob');
-  element(by.model('user.password')).sendKeys('1234');
-  element(by.css('button[ng-click]')).click();
-  browser.get('/#/notes');
-}
+// function login(){
+//   browser.get('/#/login');
+//   element(by.model('user.username')).sendKeys('bob');
+//   element(by.model('user.password')).sendKeys('1234');
+//   element(by.css('button[ng-click]')).click();
+//   browser.get('/#/notes');
+// }

@@ -1,8 +1,8 @@
 'use strict';
 
-var cp = require('child_process'),
-    h  = require('../../helpers/helpers'),
-    db = h.getdb();
+var //cp = require('child_process'),
+    h  = require('../../helpers/helpers');
+    //db = h.getdb();
 
 describe('register', function(){
   // beforeEach(function(done){
