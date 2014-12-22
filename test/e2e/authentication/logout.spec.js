@@ -5,11 +5,11 @@ h  = require('../../helpers/helpers'),
 db = h.getdb();
 
 describe('logout', function(){
-  beforeEach(function(done){
-    cp.execFile(__dirname + '/../../scripts/clean-db.sh', [db], {cwd:__dirname + '/../../scripts'}, function(err, stdout, stderr){
-      done();
-    });
-  });
+  // beforeEach(function(done){
+  //   cp.execFile(__dirname + '/../../scripts/clean-db.sh', [db], {cwd:__dirname + '/../../scripts'}, function(err, stdout, stderr){
+  //     done();
+  //   });
+  // });
 
   it('should get login page', function(){
     expect(element(by.css('div[ui-view] > h1')).getText()).toEqual('login');

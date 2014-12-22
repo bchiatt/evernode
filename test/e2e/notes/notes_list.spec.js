@@ -6,12 +6,12 @@ var cp   = require('child_process'),
     path = require('path');
 
 describe('notes list', function(){
-  beforeEach(function(done){
-    cp.execFile(__dirname + '/../../scripts/clean-db.sh', [db], {cwd:__dirname + '/../../scripts'}, function(err, stdout, stderr){
-      login();
-      done();
-    });
-  });
+  // beforeEach(function(done){
+  //   cp.execFile(__dirname + '/../../scripts/clean-db.sh', [db], {cwd:__dirname + '/../../scripts'}, function(err, stdout, stderr){
+  //     login();
+  //     done();
+  //   });
+  // });
 
   it('should get the notes page', function(){
     expect(element(by.css('div[ui-view] > h1')).getText()).toEqual('notes');
