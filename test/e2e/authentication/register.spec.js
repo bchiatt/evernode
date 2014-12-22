@@ -2,7 +2,7 @@
 
 var //cp = require('child_process'),
     h  = require('../../helpers/helpers');
-    //db = h.getdb();
+//     db = h.getdb();
 
 describe('register', function(){
   // beforeEach(function(done){

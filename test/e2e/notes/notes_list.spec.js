@@ -1,8 +1,8 @@
 'use strict';
 
 var //cp   = require('child_process'),
-    h    = require('../../helpers/helpers'),
-    //db   = h.getdb(),
+//     h    = require('../../helpers/helpers'),
+//     db   = h.getdb(),
     path = require('path');
 
 describe('notes list', function(){
